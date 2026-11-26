@@ -1,3 +1,5 @@
+![Handles API TypeScript SDK: a fetch request and its JSON response](assets/readme-handlesapi-js.png)
+
 # handlesapi-js
 
 `handlesapi-js` is the TypeScript client for [Handles API](https://handlesapi.com), a REST and MCP API that returns public data from X (Twitter), Instagram, TikTok, YouTube, Telegram, Bluesky, Twitch, Kick and LinkedIn companies in one consistent JSON shape. It has no runtime dependencies (it uses `fetch`), ships ESM and CommonJS builds, and types all 113 endpoints from the [OpenAPI spec](https://github.com/handlesapi/openapi).
@@ -42,6 +44,8 @@ for (const t of tweets.data.tweets ?? []) console.log(t.likes, t.text);
 If you omit `apiKey`, the client reads `HANDLES_API_KEY` from the environment.
 
 ## Endpoints
+
+![The Handles API reference page for an endpoint: request in curl, parameters and response](assets/screenshot-reference.png)
 
 Every endpoint has a typed method named after its `operationId` in camelCase. Path, query and body parameters all go in a single object, and the `data` of every response is typed.
 
