@@ -53,7 +53,7 @@
     "generate": "node scripts/generate.mjs",
     "build": "node scripts/build.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "npm run build && node --test \"test/*.test.*js\"",
+    "test": "npm run build && node --test test/client.test.mjs test/cjs.test.cjs",
     "prepare": "npm run build"
   },
   "devDependencies": {
