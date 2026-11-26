@@ -14,10 +14,8 @@
 
 ### Install
 
-The package is not published to npm yet. Install it straight from GitHub; the build runs on install:
-
 ```bash
-npm install github:handlesapi/handlesapi-js
+npm install handlesapi
 ```
 
 Requires Node 18 or newer (or any runtime with `fetch`: Deno, Bun, Cloudflare Workers).
