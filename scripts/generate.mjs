@@ -9,7 +9,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const DEFAULT_SPEC = "https://raw.githubusercontent.com/handlesapi/openapi/main/openapi.json";
+const DEFAULT_SPEC = "https://handlesapi.com/openapi.json";
 const here = dirname(fileURLToPath(import.meta.url));
 const outDir = resolve(here, "../src/generated");
 

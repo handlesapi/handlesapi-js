@@ -125,7 +125,7 @@ Each page costs credits, so set `maxPages`. See [Pagination](https://handlesapi.
 The types and method list in `src/generated/` are generated from [`openapi.json`](https://github.com/handlesapi/openapi), and the generator is part of this repo:
 
 ```bash
-npm run generate                      # downloads the latest spec from GitHub
+npm run generate                      # downloads the latest spec from handlesapi.com/openapi.json
 node scripts/generate.mjs ./openapi.json   # or use a local copy
 ```
 
@@ -152,6 +152,6 @@ The same API is available to AI assistants as a remote [Model Context Protocol](
 - MCP server: [handlesapi/mcp](https://github.com/handlesapi/mcp)
 - Changelog: [CHANGELOG.md](CHANGELOG.md), contributing: [CONTRIBUTING.md](CONTRIBUTING.md), security: [SECURITY.md](SECURITY.md)
 - Python client: [handlesapi-python](https://github.com/handlesapi/handlesapi-python)
-- OpenAPI spec: [handlesapi/openapi](https://github.com/handlesapi/openapi)
+- OpenAPI spec: [handlesapi.com/openapi.json](https://handlesapi.com/openapi.json), also in [handlesapi/openapi](https://github.com/handlesapi/openapi)
 
 Handles API is an independent service and is not affiliated with any of the platforms it covers. It returns public data only. MIT licensed.

@@ -50,20 +50,20 @@ export type AccountsPlatformsData = {
       note?: unknown;
       fields?: Array<string> | null;
       directory_path?: string | null;
-    };
+    } | null;
     live?: {
       available?: boolean | null;
       source?: string | null;
       /** Null in the example; the type is not inferable from it. */
       reads_per_minute?: unknown;
       note?: string | null;
-    };
+    } | null;
     ownership_verification?: {
       available?: boolean | null;
       field?: string | null;
       endpoint?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /accounts/{platform}/{handle}`. */
@@ -88,17 +88,17 @@ export type AccountsCheckData = {
     avatar_url?: string | null;
     url?: string | null;
     object?: string | null;
-  };
+  } | null;
   audience?: {
     count?: number | null;
     metric?: string | null;
     precision?: string | null;
-  };
+  } | null;
   flags?: {
     verified?: boolean | null;
     private?: boolean | null;
     nsfw?: boolean | null;
-  };
+  } | null;
   /** Null in the example; the type is not inferable from it. */
   created_at?: unknown;
   catalog?: {
@@ -118,8 +118,8 @@ export type AccountsCheckData = {
       avg_comments?: number | null;
       posts_analyzed?: number | null;
       citation_score?: number | null;
-    };
-  };
+    } | null;
+  } | null;
 };
 
 /** Parameters of `GET /accounts/{platform}/{handle}/live`. */
@@ -146,17 +146,17 @@ export type AccountsLiveData = {
     avatar_url?: string | null;
     url?: string | null;
     object?: string | null;
-  };
+  } | null;
   audience?: {
     count?: number | null;
     metric?: string | null;
     precision?: string | null;
-  };
+  } | null;
   flags?: {
     verified?: boolean | null;
     private?: boolean | null;
     nsfw?: boolean | null;
-  };
+  } | null;
   /** Null in the example; the type is not inferable from it. */
   created_at?: unknown;
   catalog?: {
@@ -176,8 +176,8 @@ export type AccountsLiveData = {
       avg_comments?: number | null;
       posts_analyzed?: number | null;
       citation_score?: number | null;
-    };
-  };
+    } | null;
+  } | null;
   live?: {
     state?: string | null;
     source?: string | null;
@@ -187,8 +187,8 @@ export type AccountsLiveData = {
     secondary?: {
       following?: number | null;
       posts?: number | null;
-    };
-  };
+    } | null;
+  } | null;
 };
 
 /** Parameters of `POST /accounts/check`. */
@@ -221,17 +221,17 @@ export type AccountsBulkData = {
         avatar_url?: string | null;
         url?: string | null;
         object?: string | null;
-      };
+      } | null;
       audience?: {
         count?: number | null;
         metric?: string | null;
         precision?: string | null;
-      };
+      } | null;
       flags?: {
         verified?: boolean | null;
         private?: boolean | null;
         nsfw?: boolean | null;
-      };
+      } | null;
       /** Null in the example; the type is not inferable from it. */
       created_at?: unknown;
       catalog?: {
@@ -251,10 +251,10 @@ export type AccountsBulkData = {
           avg_comments?: number | null;
           posts_analyzed?: number | null;
           citation_score?: number | null;
-        };
-      };
-    };
-  }>;
+        } | null;
+      } | null;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /accounts/resolve`. */
@@ -281,17 +281,17 @@ export type AccountsResolveData = {
       avatar_url?: string | null;
       url?: string | null;
       object?: string | null;
-    };
+    } | null;
     audience?: {
       count?: number | null;
       metric?: string | null;
       precision?: string | null;
-    };
+    } | null;
     flags?: {
       verified?: boolean | null;
       private?: boolean | null;
       nsfw?: boolean | null;
-    };
+    } | null;
     /** Null in the example; the type is not inferable from it. */
     created_at?: unknown;
     catalog?: {
@@ -311,9 +311,9 @@ export type AccountsResolveData = {
         avg_comments?: number | null;
         posts_analyzed?: number | null;
         citation_score?: number | null;
-      };
-    };
-  }>;
+      } | null;
+    } | null;
+  }> | null;
   summary?: {
     found_on?: Array<string> | null;
     verified_on?: Array<string> | null;
@@ -322,7 +322,7 @@ export type AccountsResolveData = {
     largest_platform?: string | null;
     names?: Array<string> | null;
     names_agree?: boolean | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /directory`. */
@@ -340,10 +340,10 @@ export type DirectoryIndexData = {
     catalog?: {
       estimated_rows?: number | null;
       estimate_source?: string | null;
-    };
+    } | null;
     freshness?: {
       daily_stats_through?: string | null;
-    };
+    } | null;
     fields?: Array<string> | null;
     sorts?: Array<string> | null;
     default_sort?: string | null;
@@ -351,18 +351,18 @@ export type DirectoryIndexData = {
     search?: {
       fulltext?: boolean | null;
       substring?: boolean | null;
-    };
+    } | null;
     facets?: {
       language?: string | null;
       country?: string | null;
       category?: string | null;
       followers?: string | null;
-    };
+    } | null;
     follower_graph?: {
       supported?: boolean | null;
       kind?: string | null;
       note?: string | null;
-    };
+    } | null;
     endpoints?: {
       list?: string | null;
       detail?: string | null;
@@ -371,13 +371,13 @@ export type DirectoryIndexData = {
       following?: string | null;
       bulk?: string | null;
       facets?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
   defaults?: {
     limit?: number | null;
     max_limit?: number | null;
     scope?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /directory/{platform}`. */
@@ -442,7 +442,7 @@ export type DirectoryListData = {
     is_nsfw?: boolean | null;
     last_seen?: string | null;
     weekly_growth?: number | null;
-  }>;
+  }> | null;
   meta?: {
     request_id?: string | null;
     generated_at?: string | null;
@@ -451,9 +451,9 @@ export type DirectoryListData = {
       limit?: number | null;
       next_cursor?: string | null;
       count?: number | null;
-    };
+    } | null;
     source?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /directory/{platform}/{id}`. */
@@ -502,12 +502,12 @@ export type DirectoryGetData = {
     weekly_growth?: number | null;
     /** Null in the example; the type is not inferable from it. */
     notable_followers?: unknown;
-  };
+  } | null;
   growth?: Array<{
     day?: string | null;
     value?: number | null;
     delta?: number | null;
-  }>;
+  }> | null;
   similar?: Array<{
     user_id?: string | null;
     username?: string | null;
@@ -516,7 +516,7 @@ export type DirectoryGetData = {
     language?: string | null;
     country?: string | null;
     category?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /directory/{platform}/{id}/growth`. */
@@ -539,7 +539,7 @@ export type DirectoryGrowthData = {
     day?: string | null;
     value?: number | null;
     delta?: number | null;
-  }>;
+  }> | null;
   summary?: {
     first_day?: string | null;
     last_day?: string | null;
@@ -549,7 +549,7 @@ export type DirectoryGrowthData = {
     change_pct?: number | null;
     avg_daily_change?: number | null;
     days_covered?: number | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /directory/{platform}/{id}/followers`. */
@@ -573,12 +573,12 @@ export type DirectoryFollowersData = {
     reported_metric?: number | null;
     known_edges?: number | null;
     known_edges_capped?: boolean | null;
-  };
+  } | null;
   graph?: {
     direction?: string | null;
     kind?: string | null;
     note?: string | null;
-  };
+  } | null;
   edges?: Array<{
     peer_id?: string | null;
     edge_type?: string | null;
@@ -589,7 +589,7 @@ export type DirectoryFollowersData = {
     followers_count?: number | null;
     language?: string | null;
     country?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /directory/{platform}/{id}/following`. */
@@ -613,12 +613,12 @@ export type DirectoryFollowingData = {
     reported_metric?: number | null;
     known_edges?: number | null;
     known_edges_capped?: boolean | null;
-  };
+  } | null;
   graph?: {
     direction?: string | null;
     kind?: string | null;
     note?: string | null;
-  };
+  } | null;
   edges?: Array<{
     peer_id?: string | null;
     edge_type?: string | null;
@@ -629,7 +629,7 @@ export type DirectoryFollowingData = {
     followers_count?: number | null;
     language?: string | null;
     country?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `POST /directory/{platform}/bulk`. */
@@ -675,7 +675,7 @@ export type DirectoryBulkData = {
     is_nsfw?: boolean | null;
     last_seen?: string | null;
     weekly_growth?: number | null;
-  }>;
+  }> | null;
   missing?: Array<string> | null;
 };
 
@@ -700,8 +700,8 @@ export type DirectoryFacetsData = {
       values?: Array<{
         value?: string | null;
         count?: number | null;
-      }>;
-    };
+      }> | null;
+    } | null;
     followers?: {
       available?: boolean | null;
       method?: string | null;
@@ -711,13 +711,13 @@ export type DirectoryFacetsData = {
         value?: string | null;
         count?: number | null;
         sampled?: number | null;
-      }>;
-    };
+      }> | null;
+    } | null;
     country?: {
       available?: boolean | null;
       reason?: string | null;
-    };
-  };
+    } | null;
+  } | null;
 };
 
 /** Parameters of `GET /directory/search`. */
@@ -747,8 +747,8 @@ export type DirectorySearchData = {
       language?: string | null;
       country?: string | null;
       category?: string | null;
-    }>;
-  }>;
+    }> | null;
+  }> | null;
   unavailable?: Array<unknown> | null;
 };
 
@@ -796,7 +796,7 @@ export type XUsersAboutData = {
     country?: string | null;
     createdAt?: string | null;
     usernameChangeCount?: number | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /x/users/{handle}/tweets`. */
@@ -860,8 +860,8 @@ export type XUsersTweetsData = {
       header_url?: unknown;
       created_at?: string | null;
       profile_url?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /x/users/{handle}/media`. */
@@ -923,8 +923,8 @@ export type XUsersMediaData = {
       header_url?: unknown;
       created_at?: string | null;
       profile_url?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /x/users/{handle}/mentions`. */
@@ -986,8 +986,8 @@ export type XUsersMentionsData = {
       header_url?: unknown;
       created_at?: string | null;
       profile_url?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /x/users/{handle}/followers`. */
@@ -1022,7 +1022,7 @@ export type XUsersFollowersData = {
     header_url?: unknown;
     created_at?: string | null;
     profile_url?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /x/users/{handle}/verified-followers`. */
@@ -1057,7 +1057,7 @@ export type XUsersVerifiedFollowersData = {
     header_url?: unknown;
     created_at?: string | null;
     profile_url?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /x/users/{handle}/followers/ids`. */
@@ -1110,7 +1110,7 @@ export type XUsersFollowingData = {
     header_url?: unknown;
     created_at?: string | null;
     profile_url?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /x/users/{handle}/relationship`. */
@@ -1186,7 +1186,7 @@ export type XTweetsGetData = {
     header_url?: unknown;
     created_at?: string | null;
     profile_url?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /x/tweets`. */
@@ -1244,8 +1244,8 @@ export type XTweetsBatchData = {
       header_url?: unknown;
       created_at?: string | null;
       profile_url?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
   requested?: number | null;
   fetched?: number | null;
 };
@@ -1309,8 +1309,8 @@ export type XTweetsRepliesData = {
       header_url?: unknown;
       created_at?: string | null;
       profile_url?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /x/tweets/{id}/thread`. */
@@ -1373,8 +1373,8 @@ export type XTweetsThreadData = {
       header_url?: unknown;
       created_at?: string | null;
       profile_url?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /x/tweets/{id}/quotes`. */
@@ -1436,8 +1436,8 @@ export type XTweetsQuotesData = {
       header_url?: unknown;
       created_at?: string | null;
       profile_url?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /x/tweets/{id}/retweeters`. */
@@ -1472,7 +1472,7 @@ export type XTweetsRetweetersData = {
     header_url?: unknown;
     created_at?: string | null;
     profile_url?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /x/search/tweets`. */
@@ -1536,8 +1536,8 @@ export type XSearchTweetsData = {
       header_url?: unknown;
       created_at?: string | null;
       profile_url?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /x/search/users`. */
@@ -1572,7 +1572,7 @@ export type XSearchUsersData = {
     header_url?: unknown;
     created_at?: string | null;
     profile_url?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /x/lists/{id}/tweets`. */
@@ -1634,8 +1634,8 @@ export type XListsTweetsData = {
       header_url?: unknown;
       created_at?: string | null;
       profile_url?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /x/lists/{id}/members`. */
@@ -1670,7 +1670,7 @@ export type XListsMembersData = {
     header_url?: unknown;
     created_at?: string | null;
     profile_url?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /x/communities/{id}`. */
@@ -1686,7 +1686,7 @@ export type XCommunitiesGetData = {
     name?: string | null;
     member_count?: number | null;
     is_nsfw?: boolean | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /x/communities/{id}/members`. */
@@ -1721,7 +1721,7 @@ export type XCommunitiesMembersData = {
     header_url?: unknown;
     created_at?: string | null;
     profile_url?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /x/communities/{id}/moderators`. */
@@ -1756,7 +1756,7 @@ export type XCommunitiesModeratorsData = {
     header_url?: unknown;
     created_at?: string | null;
     profile_url?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /x/communities/{id}/tweets`. */
@@ -1818,8 +1818,8 @@ export type XCommunitiesTweetsData = {
       header_url?: unknown;
       created_at?: string | null;
       profile_url?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /x/trends`. */
@@ -1841,7 +1841,7 @@ export type XTrendsData = {
     query?: string | null;
     /** Null in the example; the type is not inferable from it. */
     tweet_volume?: unknown;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /people/lookup`. */
@@ -1873,20 +1873,20 @@ export type PeopleLookupData = {
         user_id?: string | null;
         handle?: string | null;
         follower_count?: number | null;
-      };
-    }>;
+      } | null;
+    }> | null;
     totals?: {
       platforms?: number | null;
       audience?: number | null;
       largest_platform?: string | null;
-    };
+    } | null;
     match?: {
       found_on?: Array<string> | null;
       verified_on?: Array<string> | null;
       names?: Array<string> | null;
       names_agree?: boolean | null;
-    };
-  }>;
+    } | null;
+  }> | null;
   unavailable?: Array<unknown> | null;
 };
 
@@ -1924,7 +1924,7 @@ export type PeopleSearchData = {
     verifiedOnly?: boolean | null;
     /** Null in the example; the type is not inferable from it. */
     q?: unknown;
-  };
+  } | null;
   groups?: Array<{
     platform?: string | null;
     count?: number | null;
@@ -1941,8 +1941,8 @@ export type PeopleSearchData = {
       language?: string | null;
       category?: string | null;
       url?: string | null;
-    }>;
-  }>;
+    }> | null;
+  }> | null;
   unavailable?: Array<unknown> | null;
 };
 
@@ -1999,12 +1999,12 @@ export type ScrapeXUsersData = {
       account_age_days?: number | null;
       created_at?: string | null;
       source?: string | null;
-    };
+    } | null;
     error?: {
       code?: string | null;
       message?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /scrape/telegram/channel`. */
@@ -2032,7 +2032,7 @@ export type ScrapeTelegramChannelData = {
     /** Null in the example; the type is not inferable from it. */
     country?: unknown;
     avg_views?: number | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /insights/x/{handle}`. */
@@ -2057,7 +2057,7 @@ export type InsightsXDossierData = {
     language?: string | null;
     country?: string | null;
     profile_url?: string | null;
-  };
+  } | null;
   coverage?: {
     tweets?: boolean | null;
     reliable?: boolean | null;
@@ -2067,7 +2067,7 @@ export type InsightsXDossierData = {
     computed_at?: string | null;
     min_reliable_sample?: number | null;
     note?: string | null;
-  };
+  } | null;
   engagement?: {
     window_days?: number | null;
     originals_sampled?: number | null;
@@ -2076,18 +2076,18 @@ export type InsightsXDossierData = {
       view_engagement_rate?: number | null;
       bookmark_rate?: number | null;
       reach_ratio?: number | null;
-    };
+    } | null;
     medians?: {
       median_engagement?: number | null;
       median_views?: number | null;
-    };
+    } | null;
     peer?: {
       peer_group?: string | null;
       peer_group_label?: string | null;
       peer_percentile?: number | null;
       band?: string | null;
-    };
-  };
+    } | null;
+  } | null;
   benchmark?: {
     engagement_rate?: number | null;
     percentile?: number | null;
@@ -2096,8 +2096,8 @@ export type InsightsXDossierData = {
       accounts?: number | null;
       min_followers?: number | null;
       median_followers?: number | null;
-    };
-  };
+    } | null;
+  } | null;
 };
 
 /** Parameters of `GET /insights/x/{handle}/engagement`. */
@@ -2112,13 +2112,13 @@ export type InsightsXEngagementData = {
     username?: string | null;
     followers?: number | null;
     tier?: string | null;
-  };
+  } | null;
   coverage?: {
     tweets?: boolean | null;
     reliable?: boolean | null;
     originals_sampled?: number | null;
     window_days?: number | null;
-  };
+  } | null;
   engagement?: {
     computed_at?: string | null;
     rates?: {
@@ -2126,22 +2126,22 @@ export type InsightsXEngagementData = {
       view_engagement_rate?: number | null;
       bookmark_rate?: number | null;
       reach_ratio?: number | null;
-    };
+    } | null;
     averages?: {
       avg_likes?: number | null;
       avg_retweets?: number | null;
       avg_views?: number | null;
-    };
+    } | null;
     medians?: {
       median_likes?: number | null;
       median_engagement?: number | null;
-    };
+    } | null;
     peer?: {
       peer_group?: string | null;
       peer_percentile?: number | null;
       band?: string | null;
-    };
-  };
+    } | null;
+  } | null;
 };
 
 /** Parameters of `GET /insights/x/{handle}/top-tweets`. */
@@ -2159,12 +2159,12 @@ export type InsightsXTopTweetsData = {
   account?: {
     username?: string | null;
     followers?: number | null;
-  };
+  } | null;
   coverage?: {
     tweets?: boolean | null;
     reliable?: boolean | null;
     originals_sampled?: number | null;
-  };
+  } | null;
   sort?: string | null;
   tweets?: Array<{
     tweet_id?: string | null;
@@ -2178,7 +2178,7 @@ export type InsightsXTopTweetsData = {
     engagement?: number | null;
     viral_multiple?: number | null;
     has_media?: boolean | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/x/{handle}/viral-patterns`. */
@@ -2196,12 +2196,12 @@ export type InsightsXViralPatternsData = {
   account?: {
     username?: string | null;
     followers?: number | null;
-  };
+  } | null;
   coverage?: {
     tweets?: boolean | null;
     reliable?: boolean | null;
     originals_sampled?: number | null;
-  };
+  } | null;
   viral_patterns?: {
     metric?: string | null;
     peer_group?: string | null;
@@ -2213,18 +2213,18 @@ export type InsightsXViralPatternsData = {
       interval?: string | null;
       accounts_sampled?: number | null;
       account_vote?: string | null;
-    }>;
+    }> | null;
     timing?: {
       hours_summary?: string | null;
-    };
+    } | null;
     format_fit?: Array<{
       label?: string | null;
       account_share_pct?: number | null;
       catalog_lift_pct?: number | null;
       catalog_accounts?: number | null;
       strength?: string | null;
-    }>;
-  };
+    }> | null;
+  } | null;
 };
 
 /** Parameters of `GET /insights/x/{handle}/benchmark`. */
@@ -2238,12 +2238,12 @@ export type InsightsXBenchmarkData = {
   account?: {
     username?: string | null;
     followers?: number | null;
-  };
+  } | null;
   coverage?: {
     tweets?: boolean | null;
     reliable?: boolean | null;
     originals_sampled?: number | null;
-  };
+  } | null;
   benchmark?: {
     engagement_rate?: number | null;
     percentile?: number | null;
@@ -2255,12 +2255,12 @@ export type InsightsXBenchmarkData = {
       median_followers?: number | null;
       median_view_rate?: number | null;
       median_reach_pct?: number | null;
-    };
+    } | null;
     percentiles?: Array<{
       p?: number | null;
       rate?: number | null;
-    }>;
-  };
+    }> | null;
+  } | null;
 };
 
 /** Parameters of `GET /insights/x/leaders`. */
@@ -2295,7 +2295,7 @@ export type InsightsXLeadersData = {
     median_engagement?: number | null;
     tweets_per_day?: number | null;
     originals_sampled?: number | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/x/coverage`. */
@@ -2334,15 +2334,15 @@ export type InsightsXCompareData = {
     engagement_rate?: number | null;
     peer_percentile?: number | null;
     followers?: number | null;
-  }>;
+  }> | null;
   accounts?: Array<{
     handle?: string | null;
     found?: boolean | null;
     coverage?: {
       tweets?: boolean | null;
       reliable?: boolean | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/instagram/{handle}/top-posts`. */
@@ -2372,7 +2372,7 @@ export type InsightsInstagramTopPostsData = {
     /** Null in the example; the type is not inferable from it. */
     location?: unknown;
     thumbnail_url?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/instagram/{handle}/content-mix`. */
@@ -2398,7 +2398,7 @@ export type InsightsInstagramContentMixData = {
     avg_comments?: number | null;
     avg_views?: number | null;
     vs_account_avg_pct?: number | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/instagram/{handle}/cadence`. */
@@ -2421,13 +2421,13 @@ export type InsightsInstagramCadenceData = {
     to?: string | null;
     posts?: number | null;
     span_days?: number | null;
-  };
+  } | null;
   posts_per_week?: number | null;
   gap_hours?: {
     p25?: number | null;
     p50?: number | null;
     p75?: number | null;
-  };
+  } | null;
   days_since_last_post?: number | null;
   activity?: string | null;
   activity_basis?: string | null;
@@ -2440,15 +2440,15 @@ export type InsightsInstagramCadenceData = {
       hour_utc?: number | null;
       posts?: number | null;
       avg_interactions?: number | null;
-    }>;
+    }> | null;
     by_weekday?: Array<{
       weekday?: number | null;
       name?: string | null;
       posts?: number | null;
       avg_interactions?: number | null;
-    }>;
+    }> | null;
     note?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /insights/instagram/benchmarks`. */
@@ -2467,7 +2467,7 @@ export type InsightsInstagramBenchmarksData = {
     coverage_pct?: number | null;
     oldest_measurement?: string | null;
     newest_measurement?: string | null;
-  };
+  } | null;
   min_sample_for_reliable?: number | null;
   bands?: Array<{
     band?: string | null;
@@ -2482,7 +2482,7 @@ export type InsightsInstagramBenchmarksData = {
     p75?: number | null;
     p90?: number | null;
     avg_posts_analysed?: number | null;
-  }>;
+  }> | null;
   /** Null in the example; the type is not inferable from it. */
   your_band?: unknown;
 };
@@ -2514,7 +2514,7 @@ export type InsightsInstagramCoverageData = {
     daily_stat_days?: number | null;
     edges_out?: number | null;
     edges_in?: number | null;
-  };
+  } | null;
   available_endpoints?: Array<string> | null;
   unavailable_endpoints?: Array<unknown> | null;
 };
@@ -2536,7 +2536,7 @@ export type InsightsTiktokGrowthData = {
     hearts?: number | null;
     videos?: number | null;
     captured_at?: string | null;
-  };
+  } | null;
   crawled_at?: string | null;
   data_age_s?: number | null;
   exact_counts_from?: string | null;
@@ -2549,7 +2549,7 @@ export type InsightsTiktokGrowthData = {
     hearts_step?: number | null;
     videos?: number | null;
     videos_step?: number | null;
-  }>;
+  }> | null;
   growth?: {
     followers?: {
       measurable?: boolean | null;
@@ -2561,7 +2561,7 @@ export type InsightsTiktokGrowthData = {
       points_used?: number | null;
       points_excluded_rounded?: number | null;
       note?: string | null;
-    };
+    } | null;
     hearts?: {
       measurable?: boolean | null;
       change?: number | null;
@@ -2572,7 +2572,7 @@ export type InsightsTiktokGrowthData = {
       points_used?: number | null;
       points_excluded_rounded?: number | null;
       note?: string | null;
-    };
+    } | null;
     videos?: {
       measurable?: boolean | null;
       change?: number | null;
@@ -2583,8 +2583,8 @@ export type InsightsTiktokGrowthData = {
       points_used?: number | null;
       points_excluded_rounded?: number | null;
       note?: string | null;
-    };
-  };
+    } | null;
+  } | null;
 };
 
 /** Parameters of `GET /insights/tiktok/benchmarks`. */
@@ -2602,7 +2602,7 @@ export type InsightsTiktokBenchmarksData = {
     coverage_pct?: number | null;
     oldest_measurement?: string | null;
     newest_measurement?: string | null;
-  };
+  } | null;
   min_sample_for_reliable?: number | null;
   bands?: Array<{
     band?: string | null;
@@ -2617,14 +2617,14 @@ export type InsightsTiktokBenchmarksData = {
       p50?: number | null;
       p75?: number | null;
       p90?: number | null;
-    };
+    } | null;
     likes_per_video_pct_of_followers?: {
       p25?: number | null;
       p50?: number | null;
       p75?: number | null;
       p90?: number | null;
-    };
-  }>;
+    } | null;
+  }> | null;
   caveats?: Array<unknown> | null;
 };
 
@@ -2658,7 +2658,7 @@ export type InsightsTiktokCoverageData = {
     daily_stat_days?: number | null;
     edges_out?: number | null;
     edges_in?: number | null;
-  };
+  } | null;
   available_endpoints?: Array<string> | null;
   unavailable_endpoints?: Array<unknown> | null;
 };
@@ -2685,7 +2685,7 @@ export type TrendsMoversData = {
     audience?: number | null;
     change?: number | null;
     change_pct?: number | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /trends/platforms`. */
@@ -2700,7 +2700,7 @@ export type TrendsPlatformsData = {
     supported?: boolean | null;
     latest_day?: string | null;
     reason?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /identity/graph`. */
@@ -2725,7 +2725,7 @@ export type IdentityGraphData = {
     domain?: unknown;
     /** Null in the example; the type is not inferable from it. */
     company?: unknown;
-  };
+  } | null;
   entities?: Array<{
     company?: {
       slug?: string | null;
@@ -2733,11 +2733,11 @@ export type IdentityGraphData = {
       website?: string | null;
       website_domain?: string | null;
       linkedin_url?: string | null;
-    };
+    } | null;
     matched_via?: {
       platform?: string | null;
       handle?: string | null;
-    };
+    } | null;
     platforms?: Array<string> | null;
     accounts?: Array<{
       platform?: string | null;
@@ -2754,10 +2754,10 @@ export type IdentityGraphData = {
         claimed_by_companies?: number | null;
         exclusive?: boolean | null;
         domain_affinity?: string | null;
-      };
+      } | null;
       confidence?: string | null;
-    }>;
-  }>;
+    }> | null;
+  }> | null;
   coverage?: {
     measured_at?: string | null;
     companies_with_any_account?: number | null;
@@ -2768,10 +2768,10 @@ export type IdentityGraphData = {
       x?: number | null;
       tiktok?: number | null;
       instagram?: number | null;
-    };
+    } | null;
     entities_returned?: number | null;
     accounts_returned?: number | null;
-  };
+  } | null;
 };
 
 /** Parameters of `POST /identity/graph/bulk`. */
@@ -2791,8 +2791,8 @@ export type IdentityGraphBulkData = {
       name?: string | null;
       website_domain?: string | null;
       confidence?: string | null;
-    }>;
-  }>;
+    }> | null;
+  }> | null;
   requested?: number | null;
   resolved?: number | null;
 };
@@ -2816,7 +2816,7 @@ export type IdentityCompanyData = {
     source?: string | null;
     first_seen?: string | null;
     last_seen?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /identity/resolve`. */
@@ -2835,7 +2835,7 @@ export type IdentityResolveData = {
     website?: string | null;
     matched_handle?: string | null;
     followers?: number | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /identity/telegram/{username}/aliases`. */
@@ -2853,7 +2853,7 @@ export type IdentityTelegramAliasesData = {
     username?: string | null;
     first_seen?: string | null;
     last_seen?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/telegram/{username}/audience-quality`. */
@@ -2882,7 +2882,7 @@ export type InsightsTelegramAudienceQualityData = {
     days_spanned?: number | null;
     coverage_pct?: number | null;
     longest_gap_days?: number | null;
-  };
+  } | null;
   measurable?: boolean | null;
   /** Null in the example; the type is not inferable from it. */
   reason?: unknown;
@@ -2890,50 +2890,50 @@ export type InsightsTelegramAudienceQualityData = {
     first?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     latest?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     change?: number | null;
     change_pct?: number | null;
     direction?: string | null;
-  };
+  } | null;
   reach?: {
     first?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     latest?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     change?: number | null;
     change_pct?: number | null;
     direction?: string | null;
-  };
+  } | null;
   reach_ratio?: {
     first?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     latest?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     change?: number | null;
     change_pct?: number | null;
     direction?: string | null;
     median?: number | null;
     min?: number | null;
     max?: number | null;
-  };
+  } | null;
   shape?: {
     audience?: string | null;
     reach?: string | null;
     key?: string | null;
     statement?: string | null;
-  };
+  } | null;
   projection?: {
     basis_day?: string | null;
     basis_ratio?: number | null;
@@ -2941,18 +2941,18 @@ export type InsightsTelegramAudienceQualityData = {
     actual_reach?: number | null;
     gap?: number | null;
     gap_pct?: number | null;
-  };
+  } | null;
   freshness?: {
     last_observed_day?: string | null;
     data_age_days?: number | null;
     channel_last_seen?: string | null;
-  };
+  } | null;
   series?: Array<{
     day?: string | null;
     subscribers?: number | null;
     avg_views?: number | null;
     reach_ratio?: number | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/telegram/{username}/name-history`. */
@@ -2982,12 +2982,12 @@ export type InsightsTelegramNameHistoryData = {
     first_seen?: string | null;
     last_seen?: string | null;
     last_seen_days_ago?: number | null;
-  }>;
+  }> | null;
   observation?: {
     first_seen?: string | null;
     last_seen?: string | null;
     engine_watching_since?: string | null;
-  };
+  } | null;
   base_rate?: {
     measured_on?: string | null;
     sample?: string | null;
@@ -2995,7 +2995,7 @@ export type InsightsTelegramNameHistoryData = {
     one_name_pct?: number | null;
     more_than_one_name_pct?: number | null;
     no_longer_original_name_pct?: number | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /insights/youtube/{handle}/benchmark`. */
@@ -3025,7 +3025,7 @@ export type InsightsYoutubeBenchmarkData = {
     days_spanned?: number | null;
     coverage_pct?: number | null;
     longest_gap_days?: number | null;
-  };
+  } | null;
   velocity?: {
     measured?: boolean | null;
     /** Null in the example; the type is not inferable from it. */
@@ -3035,12 +3035,12 @@ export type InsightsYoutubeBenchmarkData = {
     first?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     latest?: {
       day?: string | null;
       value?: number | null;
-    };
-  };
+    } | null;
+  } | null;
   cohort?: {
     band?: string | null;
     label?: string | null;
@@ -3056,9 +3056,9 @@ export type InsightsYoutubeBenchmarkData = {
       p50?: number | null;
       p75?: number | null;
       p90?: number | null;
-    };
+    } | null;
     quantiles?: Array<number> | null;
-  };
+  } | null;
   placement?: {
     benchmarked?: boolean | null;
     /** Null in the example; the type is not inferable from it. */
@@ -3066,7 +3066,7 @@ export type InsightsYoutubeBenchmarkData = {
     percentile?: number | null;
     vs_median?: number | null;
     ladder_computed_at?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /insights/youtube/view-velocity-bands`. */
@@ -3093,9 +3093,9 @@ export type InsightsYoutubeVelocityBandsData = {
       p50?: number | null;
       p75?: number | null;
       p90?: number | null;
-    };
+    } | null;
     quantiles?: Array<number> | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/bluesky/{handle}/posting-impact`. */
@@ -3125,7 +3125,7 @@ export type InsightsBlueskyPostingImpactData = {
     days_spanned?: number | null;
     coverage_pct?: number | null;
     longest_gap_days?: number | null;
-  };
+  } | null;
   measurable?: boolean | null;
   /** Null in the example; the type is not inferable from it. */
   reason?: unknown;
@@ -3139,7 +3139,7 @@ export type InsightsBlueskyPostingImpactData = {
     posts_published?: number | null;
     posts_per_active_day?: number | null;
     longest_silence_days?: number | null;
-  };
+  } | null;
   follower_gain?: {
     on_posting_days?: {
       days?: number | null;
@@ -3149,12 +3149,12 @@ export type InsightsBlueskyPostingImpactData = {
       best?: {
         day?: string | null;
         change?: number | null;
-      };
+      } | null;
       worst?: {
         day?: string | null;
         change?: number | null;
-      };
-    };
+      } | null;
+    } | null;
     on_silent_days?: {
       days?: number | null;
       median?: number | null;
@@ -3163,15 +3163,15 @@ export type InsightsBlueskyPostingImpactData = {
       best?: {
         day?: string | null;
         change?: number | null;
-      };
+      } | null;
       worst?: {
         day?: string | null;
         change?: number | null;
-      };
-    };
+      } | null;
+    } | null;
     median_difference?: number | null;
     median_ratio?: number | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /insights/instagram/{handle}`. */
@@ -3203,7 +3203,7 @@ export type InsightsInstagramEngagementData = {
     last_post_at?: string | null;
     last_seen?: string | null;
     data_age_s?: number | null;
-  };
+  } | null;
   engagement?: {
     measured?: boolean | null;
     rate?: number | null;
@@ -3211,12 +3211,12 @@ export type InsightsInstagramEngagementData = {
     avg_comments?: number | null;
     avg_interactions?: number | null;
     posts_analyzed?: number | null;
-  };
+  } | null;
   cohort?: {
     band?: {
       min_followers?: number | null;
       max_followers?: number | null;
-    };
+    } | null;
     scanned?: number | null;
     measured?: number | null;
     percentile?: number | null;
@@ -3226,9 +3226,9 @@ export type InsightsInstagramEngagementData = {
       p50?: number | null;
       p75?: number | null;
       p90?: number | null;
-    };
+    } | null;
     mean?: number | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /insights/telegram/{username}/reach`. */
@@ -3264,8 +3264,8 @@ export type InsightsTelegramReachData = {
       exact?: boolean | null;
       median?: number | null;
       computed_at?: string | null;
-    };
-  };
+    } | null;
+  } | null;
 };
 
 /** Parameters of `GET /insights/telegram/reach-bands`. */
@@ -3284,7 +3284,7 @@ export type InsightsTelegramReachBandsData = {
     exact?: boolean | null;
     median?: number | null;
     computed_at?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/youtube/{handle}/activity`. */
@@ -3305,14 +3305,14 @@ export type InsightsYoutubeActivityData = {
     metric?: string | null;
     latest?: number | null;
     precision?: string | null;
-  };
+  } | null;
   metric?: {
     key?: string | null;
     label?: string | null;
     kind?: string | null;
     measures?: string | null;
     precision?: string | null;
-  };
+  } | null;
   window?: {
     requested_days?: number | null;
     from?: string | null;
@@ -3321,16 +3321,16 @@ export type InsightsYoutubeActivityData = {
     days_spanned?: number | null;
     coverage_pct?: number | null;
     longest_gap_days?: number | null;
-  };
+  } | null;
   summary?: {
     first?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     latest?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     change?: number | null;
     change_pct?: number | null;
     per_day?: number | null;
@@ -3339,20 +3339,20 @@ export type InsightsYoutubeActivityData = {
       change?: number | null;
       days_covered?: number | null;
       per_day?: number | null;
-    };
+    } | null;
     /** Null in the example; the type is not inferable from it. */
     peak?: unknown;
     /** Null in the example; the type is not inferable from it. */
     trough?: unknown;
     per_day_per_1k_audience?: number | null;
-  };
+  } | null;
   series?: Array<{
     day?: string | null;
     value?: number | null;
     change?: number | null;
     days_covered?: number | null;
     per_day?: number | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/tiktok/{handle}/activity`. */
@@ -3373,14 +3373,14 @@ export type InsightsTiktokActivityData = {
     metric?: string | null;
     latest?: number | null;
     precision?: string | null;
-  };
+  } | null;
   metric?: {
     key?: string | null;
     label?: string | null;
     kind?: string | null;
     measures?: string | null;
     precision?: string | null;
-  };
+  } | null;
   window?: {
     requested_days?: number | null;
     from?: string | null;
@@ -3389,16 +3389,16 @@ export type InsightsTiktokActivityData = {
     days_spanned?: number | null;
     coverage_pct?: number | null;
     longest_gap_days?: number | null;
-  };
+  } | null;
   summary?: {
     first?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     latest?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     change?: number | null;
     change_pct?: number | null;
     per_day?: number | null;
@@ -3407,20 +3407,20 @@ export type InsightsTiktokActivityData = {
       change?: number | null;
       days_covered?: number | null;
       per_day?: number | null;
-    };
+    } | null;
     /** Null in the example; the type is not inferable from it. */
     peak?: unknown;
     /** Null in the example; the type is not inferable from it. */
     trough?: unknown;
     per_day_per_1k_audience?: number | null;
-  };
+  } | null;
   series?: Array<{
     day?: string | null;
     value?: number | null;
     change?: number | null;
     days_covered?: number | null;
     per_day?: number | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/bluesky/{handle}/activity`. */
@@ -3441,14 +3441,14 @@ export type InsightsBlueskyActivityData = {
     metric?: string | null;
     latest?: number | null;
     precision?: string | null;
-  };
+  } | null;
   metric?: {
     key?: string | null;
     label?: string | null;
     kind?: string | null;
     measures?: string | null;
     precision?: string | null;
-  };
+  } | null;
   window?: {
     requested_days?: number | null;
     from?: string | null;
@@ -3457,16 +3457,16 @@ export type InsightsBlueskyActivityData = {
     days_spanned?: number | null;
     coverage_pct?: number | null;
     longest_gap_days?: number | null;
-  };
+  } | null;
   summary?: {
     first?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     latest?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     change?: number | null;
     change_pct?: number | null;
     per_day?: number | null;
@@ -3475,20 +3475,20 @@ export type InsightsBlueskyActivityData = {
       change?: number | null;
       days_covered?: number | null;
       per_day?: number | null;
-    };
+    } | null;
     /** Null in the example; the type is not inferable from it. */
     peak?: unknown;
     /** Null in the example; the type is not inferable from it. */
     trough?: unknown;
     per_day_per_1k_audience?: number | null;
-  };
+  } | null;
   series?: Array<{
     day?: string | null;
     value?: number | null;
     change?: number | null;
     days_covered?: number | null;
     per_day?: number | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/telegram/{username}/activity`. */
@@ -3509,14 +3509,14 @@ export type InsightsTelegramActivityData = {
     metric?: string | null;
     latest?: number | null;
     precision?: string | null;
-  };
+  } | null;
   metric?: {
     key?: string | null;
     label?: string | null;
     kind?: string | null;
     measures?: string | null;
     precision?: string | null;
-  };
+  } | null;
   window?: {
     requested_days?: number | null;
     from?: string | null;
@@ -3525,16 +3525,16 @@ export type InsightsTelegramActivityData = {
     days_spanned?: number | null;
     coverage_pct?: number | null;
     longest_gap_days?: number | null;
-  };
+  } | null;
   summary?: {
     first?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     latest?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     change?: number | null;
     change_pct?: number | null;
     /** Null in the example; the type is not inferable from it. */
@@ -3544,14 +3544,14 @@ export type InsightsTelegramActivityData = {
     peak?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     trough?: {
       day?: string | null;
       value?: number | null;
-    };
+    } | null;
     /** Null in the example; the type is not inferable from it. */
     per_day_per_1k_audience?: unknown;
-  };
+  } | null;
   series?: Array<{
     day?: string | null;
     value?: number | null;
@@ -3559,7 +3559,7 @@ export type InsightsTelegramActivityData = {
     days_covered?: number | null;
     /** Null in the example; the type is not inferable from it. */
     per_day?: unknown;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /insights/telegram/{username}/growth-quality`. */
@@ -3581,7 +3581,7 @@ export type InsightsTelegramGrowthQualityData = {
     latest?: number | null;
     precision?: string | null;
     precision_note?: string | null;
-  };
+  } | null;
   window?: {
     requested_days?: number | null;
     from?: string | null;
@@ -3590,7 +3590,7 @@ export type InsightsTelegramGrowthQualityData = {
     days_spanned?: number | null;
     coverage_pct?: number | null;
     longest_gap_days?: number | null;
-  };
+  } | null;
   measurable?: boolean | null;
   /** Null in the example; the type is not inferable from it. */
   reason?: unknown;
@@ -3608,14 +3608,14 @@ export type InsightsTelegramGrowthQualityData = {
       day?: string | null;
       change?: number | null;
       days_covered?: number | null;
-    };
+    } | null;
     largest_loss?: {
       day?: string | null;
       change?: number | null;
       days_covered?: number | null;
-    };
+    } | null;
     top_step_share_pct?: number | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /insights/bluesky/{handle}/growth-quality`. */
@@ -3637,7 +3637,7 @@ export type InsightsBlueskyGrowthQualityData = {
     latest?: number | null;
     precision?: string | null;
     precision_note?: string | null;
-  };
+  } | null;
   window?: {
     requested_days?: number | null;
     from?: string | null;
@@ -3646,7 +3646,7 @@ export type InsightsBlueskyGrowthQualityData = {
     days_spanned?: number | null;
     coverage_pct?: number | null;
     longest_gap_days?: number | null;
-  };
+  } | null;
   measurable?: boolean | null;
   /** Null in the example; the type is not inferable from it. */
   reason?: unknown;
@@ -3664,14 +3664,14 @@ export type InsightsBlueskyGrowthQualityData = {
       day?: string | null;
       change?: number | null;
       days_covered?: number | null;
-    };
+    } | null;
     largest_loss?: {
       day?: string | null;
       change?: number | null;
       days_covered?: number | null;
-    };
+    } | null;
     top_step_share_pct?: number | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /insights/activity/platforms`. */
@@ -3688,24 +3688,24 @@ export type InsightsActivityPlatformsData = {
       label?: string | null;
       kind?: string | null;
       measures?: string | null;
-    };
+    } | null;
     audience?: {
       metric?: string | null;
       precision?: string | null;
       precision_note?: string | null;
-    };
+    } | null;
     growth_quality?: {
       supported?: boolean | null;
       reason?: string | null;
-    };
+    } | null;
     latest_day?: string | null;
     history?: {
       measured_on?: string | null;
       accounts_with_series?: number | null;
       with_7_days?: number | null;
       with_30_days?: number | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
 /** Parameters of `GET /graph/x/overlap`. */
@@ -3731,7 +3731,7 @@ export type GraphXOverlapData = {
     known_followers_estimate?: number | null;
     scan_truncated?: boolean | null;
     in_panel?: boolean | null;
-  };
+  } | null;
   b?: {
     user_id?: string | null;
     username?: string | null;
@@ -3743,7 +3743,7 @@ export type GraphXOverlapData = {
     known_followers_estimate?: number | null;
     scan_truncated?: boolean | null;
     in_panel?: boolean | null;
-  };
+  } | null;
   overlap?: {
     shared_followers?: number | null;
     share_of_a_pct?: number | null;
@@ -3755,7 +3755,7 @@ export type GraphXOverlapData = {
     /** Null in the example; the type is not inferable from it. */
     not_comparable_reason?: unknown;
     measured_against?: string | null;
-  };
+  } | null;
   top_shared?: Array<{
     user_id?: string | null;
     username?: string | null;
@@ -3765,11 +3765,11 @@ export type GraphXOverlapData = {
     profile_url?: string | null;
     citation_score?: number | null;
     in_panel?: boolean | null;
-  }>;
+  }> | null;
   panel?: {
     size?: number | null;
     measured_at?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /graph/x/{handle}/similar`. */
@@ -3791,11 +3791,11 @@ export type GraphXSimilarData = {
     followers?: number | null;
     is_verified?: boolean | null;
     profile_url?: string | null;
-  };
+  } | null;
   coverage?: {
     indexed_followers_estimate?: number | null;
     measurable?: boolean | null;
-  };
+  } | null;
   sample?: {
     followers_sampled?: number | null;
     sample_cap?: number | null;
@@ -3803,11 +3803,11 @@ export type GraphXSimilarData = {
     min_shared_followers?: number | null;
     candidates_considered?: number | null;
     candidate_cap?: number | null;
-  };
+  } | null;
   panel?: {
     size?: number | null;
     measured_at?: string | null;
-  };
+  } | null;
   similar?: Array<{
     rank?: number | null;
     account?: {
@@ -3819,12 +3819,12 @@ export type GraphXSimilarData = {
       profile_url?: string | null;
       citation_score?: number | null;
       in_panel?: boolean | null;
-    };
+    } | null;
     shared_followers?: number | null;
     share_of_sample_pct?: number | null;
     known_followers_estimate?: number | null;
     lift?: number | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /graph/x/{handle}/notable-followers`. */
@@ -3848,7 +3848,7 @@ export type GraphXNotableFollowersData = {
     followers?: number | null;
     is_verified?: boolean | null;
     profile_url?: string | null;
-  };
+  } | null;
   scan?: {
     edges_scanned?: number | null;
     edges_resolved?: number | null;
@@ -3856,7 +3856,7 @@ export type GraphXNotableFollowersData = {
     edge_scan_cap?: number | null;
     known_followers_estimate?: number | null;
     sort?: string | null;
-  };
+  } | null;
   audience_quality?: {
     median_followers?: number | null;
     p90_followers?: number | null;
@@ -3866,7 +3866,7 @@ export type GraphXNotableFollowersData = {
     new_accounts_pct?: number | null;
     accounts_with_creation_date?: number | null;
     median_edge_age_days?: number | null;
-  };
+  } | null;
   followers?: Array<{
     user_id?: string | null;
     username?: string | null;
@@ -3878,7 +3878,7 @@ export type GraphXNotableFollowersData = {
     in_panel?: boolean | null;
     account_created_at?: string | null;
     edge_seen?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /graph/x/{handle}`. */
@@ -3898,7 +3898,7 @@ export type GraphXCardData = {
     language?: string | null;
     country?: string | null;
     profile_url?: string | null;
-  };
+  } | null;
   graph?: {
     known_followers?: number | null;
     known_followers_estimate?: number | null;
@@ -3907,19 +3907,19 @@ export type GraphXCardData = {
     following_known?: number | null;
     in_panel?: boolean | null;
     citation_score?: number | null;
-  };
+  } | null;
   coverage?: {
     followers_reported?: number | null;
     known_share_pct?: number | null;
     panel_size?: number | null;
     panel_measured_at?: string | null;
-  };
+  } | null;
   freshness?: {
     oldest_edge?: string | null;
     newest_edge?: string | null;
     edges_confirmed_last_30d?: number | null;
     profile_last_seen?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /tools`. */
@@ -3942,10 +3942,10 @@ export type ToolsCatalogData = {
       billable?: boolean | null;
       upstream?: string | null;
       unit?: string | null;
-    };
+    } | null;
     typical_latency_ms?: number | null;
     live?: boolean | null;
-  }>;
+  }> | null;
   count?: number | null;
   billable_count?: number | null;
 };
@@ -3969,7 +3969,7 @@ export type ToolsValuationData = {
     location?: string | null;
     created_at?: string | null;
     account_age_days?: number | null;
-  };
+  } | null;
   metrics?: {
     followers?: number | null;
     following?: number | null;
@@ -3978,7 +3978,7 @@ export type ToolsValuationData = {
     media_count?: number | null;
     follower_following_ratio?: number | null;
     posts_per_day?: number | null;
-  };
+  } | null;
   engagement?: {
     engagement_rate?: number | null;
     avg_likes?: number | null;
@@ -3986,14 +3986,14 @@ export type ToolsValuationData = {
     avg_replies?: number | null;
     avg_views?: number | null;
     posts_sampled?: number | null;
-  };
+  } | null;
   valuation?: {
     estimated_value_usd?: number | null;
     value_low_usd?: number | null;
     value_high_usd?: number | null;
     score?: number | null;
     rating?: string | null;
-  };
+  } | null;
   scores?: {
     follower?: number | null;
     engagement?: number | null;
@@ -4001,7 +4001,7 @@ export type ToolsValuationData = {
     authority?: number | null;
     activity?: number | null;
     profile?: number | null;
-  };
+  } | null;
   factors?: {
     base_follower_value_usd?: number | null;
     engagement_multiplier?: number | null;
@@ -4009,13 +4009,13 @@ export type ToolsValuationData = {
     authority_multiplier?: number | null;
     activity_multiplier?: number | null;
     profile_multiplier?: number | null;
-  };
+  } | null;
   summary?: {
     size_category?: string | null;
     engagement_rating?: string | null;
     strengths?: Array<string> | null;
     weaknesses?: Array<string> | null;
-  };
+  } | null;
 };
 
 /** Parameters of `POST /tools/shadowban-check`. */
@@ -4037,29 +4037,29 @@ export type ToolsShadowbanCheckData = {
     total_posts?: number | null;
     created_at?: string | null;
     account_age_days?: number | null;
-  };
+  } | null;
   checks?: {
     ghost_ban?: {
       status?: string | null;
       detail?: string | null;
-    };
+    } | null;
     search_ban?: {
       status?: string | null;
       detail?: string | null;
-    };
+    } | null;
     reply_deboosting?: {
       status?: string | null;
       detail?: string | null;
-    };
+    } | null;
     search_suggestion_ban?: {
       status?: string | null;
       detail?: string | null;
-    };
-  };
+    } | null;
+  } | null;
   verdict?: {
     clean?: boolean | null;
     flag_count?: number | null;
-  };
+  } | null;
   checked_at?: string | null;
 };
 
@@ -4082,33 +4082,33 @@ export type ToolsFollowerAuditData = {
     total_posts?: number | null;
     created_at?: string | null;
     account_age_days?: number | null;
-  };
+  } | null;
   composition?: {
     real_percent?: number | null;
     suspicious_percent?: number | null;
     bot_percent?: number | null;
     inactive_percent?: number | null;
-  };
+  } | null;
   engagement?: {
     engagement_rate?: number | null;
     avg_likes?: number | null;
     avg_retweets?: number | null;
     avg_replies?: number | null;
     avg_views?: number | null;
-  };
+  } | null;
   scores?: {
     quality?: number | null;
     engagement?: number | null;
     account_health?: number | null;
     follower_sample?: number | null;
-  };
+  } | null;
   verdict?: string | null;
   sample_size?: number | null;
   top_signals?: Array<{
     signal?: string | null;
     count?: number | null;
     label?: string | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `POST /tools/engagement-calculator`. */
@@ -4130,7 +4130,7 @@ export type ToolsEngagementCalculatorData = {
     total_posts?: number | null;
     created_at?: string | null;
     account_age_days?: number | null;
-  };
+  } | null;
   engagement?: {
     engagement_rate?: number | null;
     median_engagement_rate?: number | null;
@@ -4143,7 +4143,7 @@ export type ToolsEngagementCalculatorData = {
     avg_bookmarks?: number | null;
     avg_engagement_per_post?: number | null;
     total_engagement?: number | null;
-  };
+  } | null;
   rates?: {
     like_rate?: number | null;
     retweet_rate?: number | null;
@@ -4154,7 +4154,7 @@ export type ToolsEngagementCalculatorData = {
     conversation_rate?: number | null;
     view_to_engagement_rate?: number | null;
     like_dominance?: number | null;
-  };
+  } | null;
   rating?: string | null;
   rating_score?: number | null;
   benchmarks?: {
@@ -4162,12 +4162,12 @@ export type ToolsEngagementCalculatorData = {
     good?: number | null;
     average?: number | null;
     below?: number | null;
-  };
+  } | null;
   reach?: {
     estimated_reach?: number | null;
     follower_following_ratio?: number | null;
     posting_frequency?: number | null;
-  };
+  } | null;
   posts_analyzed?: number | null;
   trend?: string | null;
   best_post?: {
@@ -4181,13 +4181,13 @@ export type ToolsEngagementCalculatorData = {
     bookmarks?: number | null;
     engagement_rate?: number | null;
     created_at?: string | null;
-  };
+  } | null;
   /** Null in the example; the type is not inferable from it. */
   worst_post?: unknown;
   posts?: Array<unknown> | null;
   summary?: {
     size_category?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `POST /tools/best-posting-time`. */
@@ -4209,16 +4209,16 @@ export type ToolsBestPostingTimeData = {
     total_posts?: number | null;
     created_at?: string | null;
     account_age_days?: number | null;
-  };
+  } | null;
   posts_analyzed?: number | null;
   date_range?: {
     from?: string | null;
     to?: string | null;
-  };
+  } | null;
   timezone?: {
     estimated?: string | null;
     utc_offset?: number | null;
-  };
+  } | null;
   heatmap?: Array<{
     day?: number | null;
     hour?: number | null;
@@ -4229,7 +4229,7 @@ export type ToolsBestPostingTimeData = {
     avg_replies?: number | null;
     avg_views?: number | null;
     total_engagement?: number | null;
-  }>;
+  }> | null;
   best_times?: Array<{
     day?: number | null;
     day_name?: string | null;
@@ -4238,7 +4238,7 @@ export type ToolsBestPostingTimeData = {
     avg_engagement?: number | null;
     avg_views?: number | null;
     posts?: number | null;
-  }>;
+  }> | null;
   worst_times?: Array<{
     day?: number | null;
     day_name?: string | null;
@@ -4247,7 +4247,7 @@ export type ToolsBestPostingTimeData = {
     avg_engagement?: number | null;
     avg_views?: number | null;
     posts?: number | null;
-  }>;
+  }> | null;
   best_day?: {
     day?: number | null;
     day_name?: string | null;
@@ -4255,7 +4255,7 @@ export type ToolsBestPostingTimeData = {
     avg_engagement?: number | null;
     avg_views?: number | null;
     total_engagement?: number | null;
-  };
+  } | null;
   worst_day?: {
     day?: number | null;
     day_name?: string | null;
@@ -4263,21 +4263,21 @@ export type ToolsBestPostingTimeData = {
     avg_engagement?: number | null;
     avg_views?: number | null;
     total_engagement?: number | null;
-  };
+  } | null;
   best_hour?: {
     hour?: number | null;
     posts?: number | null;
     avg_engagement?: number | null;
     avg_views?: number | null;
     total_engagement?: number | null;
-  };
+  } | null;
   worst_hour?: {
     hour?: number | null;
     posts?: number | null;
     avg_engagement?: number | null;
     avg_views?: number | null;
     total_engagement?: number | null;
-  };
+  } | null;
   day_summaries?: Array<unknown> | null;
   hour_summaries?: Array<unknown> | null;
   pattern?: {
@@ -4294,20 +4294,20 @@ export type ToolsBestPostingTimeData = {
       weekend_posts?: number | null;
       winner?: string | null;
       difference?: number | null;
-    };
-  };
+    } | null;
+  } | null;
   engagement?: {
     engagement_rate?: number | null;
     avg_likes?: number | null;
     avg_retweets?: number | null;
     avg_replies?: number | null;
     avg_views?: number | null;
-  };
+  } | null;
   timing_score?: number | null;
   timing_grade?: string | null;
   summary?: {
     recommendations?: Array<string> | null;
-  };
+  } | null;
 };
 
 /** Parameters of `POST /tools/algorithm-score`. */
@@ -4329,14 +4329,14 @@ export type ToolsAlgorithmScoreData = {
     total_posts?: number | null;
     created_at?: string | null;
     account_age_days?: number | null;
-  };
+  } | null;
   overall_score?: number | null;
   tier?: {
     name?: string | null;
     min?: number | null;
     max?: number | null;
     description?: string | null;
-  };
+  } | null;
   categories?: Array<{
     key?: string | null;
     score?: number | null;
@@ -4345,10 +4345,10 @@ export type ToolsAlgorithmScoreData = {
       kind?: string | null;
       fraction_digits?: number | null;
       out_of?: number | null;
-    };
+    } | null;
     label?: string | null;
     description?: string | null;
-  }>;
+  }> | null;
   averages?: {
     avg_views?: number | null;
     avg_likes?: number | null;
@@ -4356,7 +4356,7 @@ export type ToolsAlgorithmScoreData = {
     avg_replies?: number | null;
     avg_retweets?: number | null;
     avg_quotes?: number | null;
-  };
+  } | null;
   posts_analyzed?: number | null;
   checked_at?: string | null;
 };
@@ -4374,7 +4374,7 @@ export type ToolsTweetAnalyzerData = {
     url?: string | null;
     text?: string | null;
     created_at?: string | null;
-  };
+  } | null;
   author?: {
     id?: string | null;
     handle?: string | null;
@@ -4382,7 +4382,7 @@ export type ToolsTweetAnalyzerData = {
     avatar_url?: string | null;
     followers?: number | null;
     verified?: boolean | null;
-  };
+  } | null;
   metrics?: {
     likes?: number | null;
     retweets?: number | null;
@@ -4391,7 +4391,7 @@ export type ToolsTweetAnalyzerData = {
     views?: number | null;
     bookmarks?: number | null;
     total_engagement?: number | null;
-  };
+  } | null;
   engagement_rate?: number | null;
   engagement_basis?: string | null;
   virality_score?: number | null;
@@ -4402,7 +4402,7 @@ export type ToolsTweetAnalyzerData = {
     reply_share?: number | null;
     quote_share?: number | null;
     bookmark_share?: number | null;
-  };
+  } | null;
   amplification_rate?: number | null;
   save_rate?: number | null;
   views_per_follower?: number | null;
@@ -4415,8 +4415,8 @@ export type ToolsTweetAnalyzerData = {
       avatar_url?: string | null;
       followers?: number | null;
       verified?: boolean | null;
-    }>;
-  };
+    }> | null;
+  } | null;
 };
 
 /** Parameters of `POST /tools/mention-checker`. */
@@ -4434,7 +4434,7 @@ export type ToolsMentionCheckerData = {
     avatar_url?: string | null;
     verified?: boolean | null;
     followers?: number | null;
-  };
+  } | null;
   totals?: {
     mentions?: number | null;
     unique_mentioners?: number | null;
@@ -4442,7 +4442,7 @@ export type ToolsMentionCheckerData = {
     combined_reach?: number | null;
     total_engagement?: number | null;
     avg_engagement?: number | null;
-  };
+  } | null;
   biggest_reach_handle?: string | null;
   top_mention?: {
     id?: string | null;
@@ -4455,15 +4455,15 @@ export type ToolsMentionCheckerData = {
       avatar_url?: string | null;
       followers?: number | null;
       verified?: boolean | null;
-    };
+    } | null;
     metrics?: {
       likes?: number | null;
       retweets?: number | null;
       replies?: number | null;
       views?: number | null;
       total_engagement?: number | null;
-    };
-  };
+    } | null;
+  } | null;
   /** Null in the example; the type is not inferable from it. */
   top_mentioner?: unknown;
   mentions?: Array<unknown> | null;
@@ -4491,7 +4491,7 @@ export type ToolsGrowthSimulatorData = {
     niche?: string | null;
     quality?: string | null;
     posts_per_day?: number | null;
-  };
+  } | null;
   projection?: {
     total_days?: number | null;
     years?: number | null;
@@ -4499,18 +4499,18 @@ export type ToolsGrowthSimulatorData = {
     total_posts?: number | null;
     total_hours?: number | null;
     reached_target?: boolean | null;
-  };
+  } | null;
   daily_followers_gained_at_start?: number | null;
   milestones?: Array<{
     followers?: number | null;
     days_from_start?: number | null;
-  }>;
+  }> | null;
   model?: {
     niche_multiplier?: number | null;
     quality_base_followers_per_day?: number | null;
     posting_bonus?: number | null;
     deterministic?: boolean | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /tools/profile-pic`. */
@@ -4582,7 +4582,7 @@ export type ToolsAudienceFinderData = {
     post_count?: number | null;
     account_created_at?: string | null;
     location?: string | null;
-  }>;
+  }> | null;
   page?: number | null;
   has_more?: boolean | null;
 };
@@ -4612,12 +4612,12 @@ export type ToolsTiktokEngagementData = {
     created_at?: string | null;
     account_age_days?: number | null;
     follower_following_ratio?: number | null;
-  };
+  } | null;
   engagement?: {
     engagement_rate?: number | null;
     avg_likes_per_video?: number | null;
     likes_per_follower?: number | null;
-  };
+  } | null;
   rating?: string | null;
   rating_score?: number | null;
   benchmarks?: {
@@ -4625,10 +4625,10 @@ export type ToolsTiktokEngagementData = {
     average?: number | null;
     good?: number | null;
     excellent?: number | null;
-  };
+  } | null;
   summary?: {
     size_category?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `POST /tools/tiktok/money`. */
@@ -4648,33 +4648,33 @@ export type ToolsTiktokMoneyData = {
     total_likes?: number | null;
     video_count?: number | null;
     account_age_days?: number | null;
-  };
+  } | null;
   engagement?: {
     engagement_rate?: number | null;
     avg_likes_per_video?: number | null;
     posts_per_month?: number | null;
-  };
+  } | null;
   earnings_usd?: {
     per_post?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     monthly?: {
       low?: number | null;
       high?: number | null;
-    };
+    } | null;
     yearly?: {
       low?: number | null;
       high?: number | null;
-    };
-  };
+    } | null;
+  } | null;
   tier?: string | null;
   engagement_multiplier?: number | null;
   engagement_quality?: string | null;
   summary?: {
     tier_label?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `POST /tools/youtube/money`. */
@@ -4697,33 +4697,33 @@ export type ToolsYoutubeMoneyData = {
     video_count?: number | null;
     account_age_days?: number | null;
     joined_date_text?: string | null;
-  };
+  } | null;
   views?: {
     avg_views_per_video?: number | null;
     est_monthly_views?: number | null;
-  };
+  } | null;
   rpm_usd?: {
     low?: number | null;
     high?: number | null;
-  };
+  } | null;
   earnings_usd?: {
     per_video?: {
       low?: number | null;
       high?: number | null;
-    };
+    } | null;
     monthly?: {
       low?: number | null;
       high?: number | null;
-    };
+    } | null;
     yearly?: {
       low?: number | null;
       high?: number | null;
-    };
-  };
+    } | null;
+  } | null;
   tier?: string | null;
   summary?: {
     tier_label?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `POST /tools/youtube/channel-value`. */
@@ -4746,29 +4746,29 @@ export type ToolsYoutubeChannelValueData = {
     video_count?: number | null;
     account_age_days?: number | null;
     joined_date_text?: string | null;
-  };
+  } | null;
   views?: {
     avg_views_per_video?: number | null;
     est_monthly_views?: number | null;
     est_monthly_earnings_usd?: number | null;
-  };
+  } | null;
   valuation?: {
     estimated_value_usd?: number | null;
     value_low_usd?: number | null;
     value_high_usd?: number | null;
     score?: number | null;
     rating?: string | null;
-  };
+  } | null;
   scores?: {
     subscriber?: number | null;
     view?: number | null;
     activity?: number | null;
     consistency?: number | null;
-  };
+  } | null;
   summary?: {
     strengths?: Array<string> | null;
     weaknesses?: Array<string> | null;
-  };
+  } | null;
 };
 
 /** Parameters of `POST /tools/kick/money`. */
@@ -4796,60 +4796,60 @@ export type ToolsKickMoneyData = {
     badge?: string | null;
     followers?: number | null;
     channel_url?: string | null;
-  };
+  } | null;
   viewership?: {
     avg_ccv?: number | null;
     hours_streamed_30d?: number | null;
     hours_watched_30d?: number | null;
     ccv_percentile?: number | null;
-  };
+  } | null;
   estimated_subscribers?: {
     low?: number | null;
     high?: number | null;
     avg?: number | null;
-  };
+  } | null;
   earnings_usd?: {
     subscriptions?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     bits?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     ads?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     tips?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     sponsorship?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     monthly?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     yearly?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     per_stream_hour?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
-  };
+    } | null;
+  } | null;
   tier?: string | null;
   computed_from?: string | null;
   summary?: {
@@ -4859,8 +4859,8 @@ export type ToolsKickMoneyData = {
       label?: string | null;
       value?: string | null;
       note?: string | null;
-    }>;
-  };
+    }> | null;
+  } | null;
 };
 
 /** Parameters of `POST /tools/kick/channel-value`. */
@@ -4892,26 +4892,26 @@ export type ToolsKickChannelValueData = {
     /** Null in the example; the type is not inferable from it. */
     age_years?: unknown;
     channel_url?: string | null;
-  };
+  } | null;
   viewership?: {
     avg_ccv?: number | null;
     peak_ccv?: number | null;
     hours_streamed_30d?: number | null;
     hours_watched_30d?: number | null;
     ccv_percentile?: number | null;
-  };
+  } | null;
   earnings_usd?: {
     monthly?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     yearly?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
-  };
+    } | null;
+  } | null;
   valuation?: {
     estimated_value_usd?: number | null;
     value_low_usd?: number | null;
@@ -4921,13 +4921,13 @@ export type ToolsKickChannelValueData = {
     audience_value_usd?: number | null;
     score?: number | null;
     rating?: string | null;
-  };
+  } | null;
   scores?: {
     viewership?: number | null;
     audience?: number | null;
     consistency?: number | null;
     status?: number | null;
-  };
+  } | null;
   tier?: string | null;
   computed_from?: string | null;
   summary?: {
@@ -4939,9 +4939,9 @@ export type ToolsKickChannelValueData = {
       label?: string | null;
       value?: string | null;
       note?: string | null;
-    }>;
+    }> | null;
     disclaimer?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `POST /tools/kick/rank`. */
@@ -4967,7 +4967,7 @@ export type ToolsKickRankData = {
     category?: string | null;
     channel_url?: string | null;
     profile_path?: string | null;
-  };
+  } | null;
   followers?: {
     value?: number | null;
     percentile?: number | null;
@@ -4976,20 +4976,20 @@ export type ToolsKickRankData = {
     sample_size?: number | null;
     indexed_total?: number | null;
     computed_at?: string | null;
-  };
+  } | null;
   avg_ccv?: {
     value?: number | null;
     percentile?: number | null;
     sample_size?: number | null;
     computed_at?: string | null;
-  };
+  } | null;
   follower_to_viewer_turnout_percent?: number | null;
   computed_from?: string | null;
   summary?: {
     tier_label?: string | null;
     sentence?: string | null;
     basis?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `POST /tools/twitch/money`. */
@@ -5017,60 +5017,60 @@ export type ToolsTwitchMoneyData = {
     badge?: string | null;
     followers?: number | null;
     channel_url?: string | null;
-  };
+  } | null;
   viewership?: {
     avg_ccv?: number | null;
     hours_streamed_30d?: number | null;
     hours_watched_30d?: number | null;
     ccv_percentile?: number | null;
-  };
+  } | null;
   estimated_subscribers?: {
     low?: number | null;
     high?: number | null;
     avg?: number | null;
-  };
+  } | null;
   earnings_usd?: {
     subscriptions?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     bits?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     ads?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     tips?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     sponsorship?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     monthly?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     yearly?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     per_stream_hour?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
-  };
+    } | null;
+  } | null;
   tier?: string | null;
   computed_from?: string | null;
   summary?: {
@@ -5080,8 +5080,8 @@ export type ToolsTwitchMoneyData = {
       label?: string | null;
       value?: string | null;
       note?: string | null;
-    }>;
-  };
+    }> | null;
+  } | null;
 };
 
 /** Parameters of `POST /tools/twitch/channel-value`. */
@@ -5112,26 +5112,26 @@ export type ToolsTwitchChannelValueData = {
     followers?: number | null;
     age_years?: number | null;
     channel_url?: string | null;
-  };
+  } | null;
   viewership?: {
     avg_ccv?: number | null;
     peak_ccv?: number | null;
     hours_streamed_30d?: number | null;
     hours_watched_30d?: number | null;
     ccv_percentile?: number | null;
-  };
+  } | null;
   earnings_usd?: {
     monthly?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
+    } | null;
     yearly?: {
       low?: number | null;
       high?: number | null;
       avg?: number | null;
-    };
-  };
+    } | null;
+  } | null;
   valuation?: {
     estimated_value_usd?: number | null;
     value_low_usd?: number | null;
@@ -5141,13 +5141,13 @@ export type ToolsTwitchChannelValueData = {
     audience_value_usd?: number | null;
     score?: number | null;
     rating?: string | null;
-  };
+  } | null;
   scores?: {
     viewership?: number | null;
     audience?: number | null;
     consistency?: number | null;
     status?: number | null;
-  };
+  } | null;
   tier?: string | null;
   computed_from?: string | null;
   summary?: {
@@ -5159,9 +5159,9 @@ export type ToolsTwitchChannelValueData = {
       label?: string | null;
       value?: string | null;
       note?: string | null;
-    }>;
+    }> | null;
     disclaimer?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `POST /tools/twitch/rank`. */
@@ -5187,7 +5187,7 @@ export type ToolsTwitchRankData = {
     category?: string | null;
     channel_url?: string | null;
     profile_path?: string | null;
-  };
+  } | null;
   followers?: {
     value?: number | null;
     percentile?: number | null;
@@ -5196,20 +5196,20 @@ export type ToolsTwitchRankData = {
     sample_size?: number | null;
     indexed_total?: number | null;
     computed_at?: string | null;
-  };
+  } | null;
   avg_ccv?: {
     value?: number | null;
     percentile?: number | null;
     sample_size?: number | null;
     computed_at?: string | null;
-  };
+  } | null;
   follower_to_viewer_turnout_percent?: number | null;
   computed_from?: string | null;
   summary?: {
     tier_label?: string | null;
     sentence?: string | null;
     basis?: string | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /leads/linkedin/domains/{domain}`. */
@@ -5233,19 +5233,19 @@ export type LeadsLinkedinDomainData = {
       staff_count?: number | null;
       founded_year?: number | null;
       followers?: number | null;
-    };
+    } | null;
     hq?: {
       location?: string | null;
       country_code?: string | null;
       country_text?: string | null;
-    };
+    } | null;
     activity?: {
       last_post_at?: string | null;
       posts_sampled?: number | null;
       avg_reactions?: number | null;
       avg_comments?: number | null;
       posted_within_90d?: boolean | null;
-    };
+    } | null;
     trend?: {
       observations?: number | null;
       window_days?: number | null;
@@ -5255,7 +5255,7 @@ export type LeadsLinkedinDomainData = {
       staff_first?: number | null;
       staff_last?: number | null;
       staff_delta?: number | null;
-    };
+    } | null;
     contacts?: {
       role_emails?: Array<unknown> | null;
       role_email_count?: number | null;
@@ -5263,25 +5263,25 @@ export type LeadsLinkedinDomainData = {
       phone_count?: number | null;
       /** Null in the example; the type is not inferable from it. */
       mx_ok?: unknown;
-    };
+    } | null;
     people?: {
       named?: number | null;
       decision_makers?: number | null;
       with_title_or_seniority?: number | null;
-    };
+    } | null;
     enrichment?: {
       status?: string | null;
       last_enriched?: string | null;
       last_seen?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
   coverage?: {
     company_columns?: {
       measured_at?: string | null;
       rows?: number | null;
-    };
+    } | null;
     companies_returned?: number | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /leads/linkedin/segments`. */
@@ -5305,7 +5305,7 @@ export type LeadsLinkedinSegmentsData = {
   dimension?: string | null;
   filters?: {
     industry?: string | null;
-  };
+  } | null;
   buckets?: Array<{
     bucket?: string | null;
     companies?: number | null;
@@ -5314,16 +5314,16 @@ export type LeadsLinkedinSegmentsData = {
     with_staff_count?: number | null;
     median_staff?: number | null;
     active_last_90d?: number | null;
-  }>;
+  }> | null;
   totals?: {
     companies?: number | null;
     with_domain?: number | null;
     crawl_succeeded?: number | null;
-  };
+  } | null;
   coverage?: {
     measured_at?: string | null;
     rows?: number | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /leads/linkedin/companies`. */
@@ -5374,7 +5374,7 @@ export type LeadsLinkedinCompaniesListData = {
       location?: string | null;
       country_text?: string | null;
       country_code?: string | null;
-    };
+    } | null;
     website_domain?: string | null;
     linkedin_url?: string | null;
     contact?: {
@@ -5383,17 +5383,17 @@ export type LeadsLinkedinCompaniesListData = {
       best_email?: string | null;
       best_email_is_role?: boolean | null;
       best_email_mx_ok?: boolean | null;
-    };
+    } | null;
     socials?: Array<{
       platform?: string | null;
       handle?: string | null;
       matched?: boolean | null;
       followers?: number | null;
-    }>;
+    }> | null;
     decision_makers?: number | null;
     readiness?: number | null;
     flags?: Array<unknown> | null;
-  }>;
+  }> | null;
 };
 
 /** Parameters of `GET /leads/linkedin/companies/{id}`. */
@@ -5413,18 +5413,18 @@ export type LeadsLinkedinCompaniesGetData = {
     hq?: {
       location?: string | null;
       country_code?: string | null;
-    };
+    } | null;
     contact?: {
       best_email?: string | null;
       best_email_is_role?: boolean | null;
       email_count?: number | null;
-    };
+    } | null;
     socials?: Array<{
       platform?: string | null;
       handle?: string | null;
       matched?: boolean | null;
       followers?: number | null;
-    }>;
+    }> | null;
     people?: Array<{
       name?: string | null;
       title?: string | null;
@@ -5434,11 +5434,11 @@ export type LeadsLinkedinCompaniesGetData = {
       source?: string | null;
       li_slug?: string | null;
       decision_maker?: boolean | null;
-    }>;
+    }> | null;
     decision_makers?: number | null;
     readiness?: number | null;
     flags?: Array<unknown> | null;
-  };
+  } | null;
 };
 
 /** Parameters of `GET /leads/linkedin/people`. */
@@ -5482,7 +5482,7 @@ export type LeadsLinkedinPeopleListData = {
       industry?: string | null;
       country_code?: string | null;
       website_domain?: string | null;
-    };
-  }>;
+    } | null;
+  }> | null;
 };
 
